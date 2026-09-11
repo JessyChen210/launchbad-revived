@@ -8,7 +8,7 @@
 4. Open Terminal and run `~/Downloads/launchbad-revived-main/launchpad`
 5. In Finder > Applications, right click Launchpad, click Get Info, and drag `assets/AppIcon.icns` onto the Launchpad icon to break it out of icon jail
 
-This has been tested up until macOS Golden Gate 27 Beta 3. This script will replace your current Dock with an older Dock pre-extracted from macOS 26.0 beta 4, and installs Launchpad pre-extracted from macOS 26.0 beta 3. During installation, this script prints signing information from these pre-extracted apps so you can confirm they are authentic.
+This has been tested up until macOS Golden Gate 27. This script will replace your current Dock with an older Dock pre-extracted from macOS 26.0 beta 4, and installs Launchpad pre-extracted from macOS 26.0 beta 3. During installation, this script prints signing information from these pre-extracted apps so you can confirm they are authentic.
 
 To uninstall, run `~/Downloads/launchbad-revived-main/launchpad` again. To clear the boot argument change, run `sudo nvram -d boot-args`. If you want to use Launchpad but don’t want to disable System Integrity Protection, download [LaunchOS](https://launchosapp.com) instead.
 
@@ -51,7 +51,7 @@ defaults delete -g NSSplitViewItemSidebarDefaultsToFloatingAppearance
 ```
 
 ## Bonus: Disable Liquid Glass
-To disable Liquid Glass on macOS Golden Gate or macOS Tahoe, open Terminal and run the following command. You won’t see your password as you type. Changes take effect after restart.
+To disable Liquid Glass on macOS Golden Gate or macOS Tahoe, open Terminal and run the following command. You won’t see your password as you type. Changes take effect after restart. If you have already installed [BackToCatalina](https://github.com/nfzerox/BackToCatalina), do not run the following command as it causes conflicts.
 
 ```
 sudo mkdir -p /Library/Preferences/FeatureFlags/Domain

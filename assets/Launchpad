@@ -49,7 +49,8 @@ fi
 
 cp /System/Library/LaunchAgents/com.apple.Dock.plist /Users/Shared/.launchpad
 cp -R /System/Library/CoreServices/Dock.app/Contents/XPCServices /Users/Shared/.launchpad/Dock.app/Contents/
-if defaults read /Library/Preferences/FeatureFlags/Domain/SwiftUI.plist Solarium | grep -q "Enabled = 0"; then
+if defaults read /Library/Preferences/FeatureFlags/Domain/SwiftUI.plist Solarium | grep -q "Enabled = 0" || \
+   [ -f /private/var/ammonia/core/tweaks/libBackToCatalinaDock.dylib ]; then
     plutil -insert EnvironmentVariables -xml "<dict><key>FEATUREFLAGS_DISABLED</key><string>SpotlightUI/SpotlightPlus:SwiftUI/Solarium</string></dict>" /Users/Shared/.launchpad/com.apple.Dock.plist
 else
     plutil -insert EnvironmentVariables -xml "<dict><key>FEATUREFLAGS_DISABLED</key><string>SpotlightUI/SpotlightPlus</string></dict>" /Users/Shared/.launchpad/com.apple.Dock.plist
